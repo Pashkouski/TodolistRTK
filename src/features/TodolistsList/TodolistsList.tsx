@@ -11,17 +11,17 @@ import {
   todolistsAction,
 } from "./todolists-reducer";
 import {
-  addTaskTC,
   removeTaskTC,
   TasksStateType,
+  tasksThunks,
   updateTaskTC,
 } from "./tasks-reducer";
-import { TaskStatuses } from "api/todolists-api";
 import { Grid, Paper } from "@mui/material";
-import { AddItemForm } from "components/AddItemForm/AddItemForm";
+import { AddItemForm } from "common/components/AddItemForm/AddItemForm";
 import { Todolist } from "./Todolist/Todolist";
 import { Navigate } from "react-router-dom";
-import { useAppDispatch } from "hooks/useAppDispatch";
+import { useAppDispatch } from "common/hooks/useAppDispatch";
+import { TaskStatuses } from "common/enum";
 
 type PropsType = {
   demo?: boolean;
@@ -44,8 +44,7 @@ export const TodolistsList: React.FC<PropsType> = ({ demo = false }) => {
     if (demo || !isLoggedIn) {
       return;
     }
-    const thunk = fetchTodolistsTC();
-    dispatch(thunk);
+    dispatch(fetchTodolistsTC());
   }, []);
 
   const removeTask = useCallback(
@@ -58,8 +57,7 @@ export const TodolistsList: React.FC<PropsType> = ({ demo = false }) => {
 
   const addTask = useCallback(
     function (title: string, todolistId: string) {
-      const thunk = addTaskTC(title, todolistId);
-      dispatch(thunk);
+      dispatch(tasksThunks.addTask({ todolistId, title }));
     },
     [dispatch]
   );

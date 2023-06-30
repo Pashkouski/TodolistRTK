@@ -1,4 +1,4 @@
-import { ResponseType } from "../api/todolists-api";
+import { ResponseType } from "common/api/common.api";
 import { Dispatch } from "redux";
 import { appActions } from "app/app-reducer";
 
@@ -11,15 +11,5 @@ export const handleServerAppError = <D>(
   } else {
     dispatch(appActions.setAppError({ error: "Some error occurred" }));
   }
-  dispatch(appActions.setAppStatus({ status: "failed" }));
-};
-
-export const handleServerNetworkError = (
-  error: { message: string },
-  dispatch: Dispatch
-) => {
-  appActions.setAppError({
-    error: error.message ? error.message : "Some error occurred",
-  });
   dispatch(appActions.setAppStatus({ status: "failed" }));
 };
