@@ -47,5 +47,3 @@ export const initializeAppTC = () => (dispatch: Dispatch) => {
     dispatch(appActions.setAppInitialized({ isInitialized: true }));
   });
 };
-
-export class setAppStatusAC {}

@@ -1,3 +1,5 @@
+import { UpdateDomainTaskModelType } from "features/TodolistsList/tasks-reducer";
+
 export type LoginParamsType = {
   email: string;
   password: string;
@@ -49,4 +51,14 @@ export type GetTasksResponse = {
   error: string | null;
   totalCount: number;
   items: TaskType[];
+};
+export const ResultCode = {
+  Success: 0,
+  Error: 1,
+  Captcha: 10,
+} as const;
+export type UpdateTaskArgType = {
+  taskId: string;
+  domainModel: UpdateDomainTaskModelType;
+  todolistId: string;
 };

@@ -1,6 +1,6 @@
-import { ResponseType } from "common/api/common.api";
 import { Dispatch } from "redux";
-import { appActions } from "app/app-reducer";
+import { appActions } from "app/app.reducer";
+import { ResponseType } from "common/types/common.types";
 
 export const handleServerAppError = <D>(
   data: ResponseType<D>,

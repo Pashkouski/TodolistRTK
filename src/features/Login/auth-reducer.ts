@@ -1,4 +1,4 @@
-import { appActions } from "app/app-reducer";
+import { appActions } from "app/app.reducer";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk } from "app/store";
 import { handleServerAppError } from "common/utils/handle.server.app.error";

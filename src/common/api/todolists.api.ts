@@ -1,4 +1,5 @@
-import { instance, ResponseType } from "common/api/common.api";
+import { instance } from "common/api/common.api";
+import { ResponseType } from "common/types/common.types";
 import {
   GetTasksResponse,
   TaskType,
