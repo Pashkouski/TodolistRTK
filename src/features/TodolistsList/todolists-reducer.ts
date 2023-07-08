@@ -4,7 +4,7 @@ import { AppThunk } from "app/store";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { handleServerNetworkError } from "common/utils/handle.server.network.error";
 import { TodolistType } from "common/enum";
-import { todolistsAPI } from "common/api/todolists.api";
+import { todolistsAPI } from "features/TodolistsList/todolists.api";
 
 const initialState: Array<TodolistDomainType> = [];
 
